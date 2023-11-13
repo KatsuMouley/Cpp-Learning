@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 3</title>
+    <style>
+        a {
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            margin: 15px;
+            padding: 20px;
+            color: rgb(255, 255, 255);
+            background-color: rgb(12, 11, 11);
+        }
+    </style>
+</head>
+
+<body>
+    <a href="main.html">Main</a>
+    <button onclick="button()"> Ver</button>
+    <table border="5" id="tabela">
+    </table>
+
+    <script>
+        let showTable = 0
+        let table = document.querySelector("#tabela");
+        table.innerHTML = `
+        <tr>
+            <th>ID</th>
+            <th>Nome do Produto</th>
+            <th>Marca</th>
+            <th>Preço</th>
+            <th>Nº compras</th>
+            <th>Quantidade</th>
+            </th>
+        </tr>`;
+        const products = [
+            {
+                id: 1,
+                productName: 'Smartphone',
+                companyName: 'Tech Co.',
+                price: 599.99,
+                productsBought: 'Electronics',
+                quantity: 3
+            },
+            {
+                id: 2,
+                productName: 'Laptop',
+                companyName: 'Gadget Corp.',
+                price: 1299.99,
+                productsBought: 'Electronics',
+                quantity: 1
+            },
+            {
+                id: 3,
+                productName: 'Headphones',
+                companyName: 'Audio Emporium',
+                price: 79.99,
+                productsBought: 'Electronics',
+                quantity: 2
+            },
+            {
+                id: 4,
+                productName: 'Backpack',
+                companyName: 'Outdoor Gear Ltd.',
+                price: 49.99,
+                productsBought: 'Accessories',
+                quantity: 5
+            }
+        ];
+
+        function button() {
+            if (showTable == 0) {
+                showTable = 1;
+                products.forEach((products) => {
+                    table.innerHTML += `
+                <tr>
+                    <th>${products.id}</th>
+                    <th>${products.productName}</th>
+                    <th>${products.companyName}</th>
+                    <th>${products.price}</th>
+                    <th>${products.productsBought}</th>
+                    <th>${products.quantity}</th>
+                </tr>`;
+                });
+            } else {
+                showTable = 0;
+                table.innerHTML = `
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome do Produto</th>
+                        <th>Marca</th>
+                        <th>Preço</th>
+                        <th>Nº compras</th>
+                        <th>Quantidade</th>
+                        </th>
+                    </tr>`;
+            }
+        }
+    </script>
+</body>
+
+</html>
