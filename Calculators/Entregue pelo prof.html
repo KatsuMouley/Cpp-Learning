@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<span id="id01"></span>
+<span id="id02"></span>
+<span id="id03"></span>
+<span id="id04"></span>
+<br>
+<script>
+var estado = "id01"
+function clicouNumero(numero){
+	const element = document.getElementById(estado);
+	element.innerHTML += numero;
+}
+function clicouOperador(operador){
+	const element = document.getElementById("id02");
+	element.innerHTML = operador;
+    estado = "id03"
+}
+function resultado(){
+	var expressao = "";
+    expressao += document.getElementById("id01").innerHTML;
+	expressao += document.getElementById("id02").innerHTML;
+	expressao += document.getElementById("id03").innerHTML;   
+    const element = document.getElementById("id04");
+	element.innerHTML = " = "+ eval(expressao);
+}
+</script>
+
+<button onclick="clicouNumero(1)">1</button>
+<button onclick="clicouNumero(2)">2</button>
+<button onclick="clicouNumero(3)">3</button>
+<br>
+<button onclick="clicouNumero(4)">4</button>
+<button onclick="clicouNumero(5)">5</button>
+<button onclick="clicouNumero(6)">6</button>
+<br>
+<button onclick="clicouNumero(7)">7</button>
+<button onclick="clicouNumero(8)">8</button>
+<button onclick="clicouNumero(9)">9</button>
+<br>
+<button onclick="clicouNumero(0)">0</button>
+<button onclick="clicouOperador('+')">+</button>
+<button onclick="clicouOperador('-')">-</button>
+<button onclick="resultado()">=</button><br>
+<button onclick="location.reload();">C</button>
+<button onclick="window.close();">Fechar</button>
+</body>
+</html> 

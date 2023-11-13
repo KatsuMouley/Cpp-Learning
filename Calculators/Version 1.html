@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<span id="id01"></span>
+<span id="id02"></span>
+<span id="id03"></span>
+<span id="id04"></span>
+<br>
+
+<script>
+var estado = "id01"
+
+function clicouNumero(numero){
+	const element = document.getElementById(estado);
+	element.innerHTML += numero;
+}
+function clicouOperador(operador){
+	const element = document.getElementById("id02");
+	element.innerHTML = operador;
+    estado = "id03"
+}
+function resultado(){
+//Aqui está a minha solução, primeiro eu peguei as varíaveis e dei os valores corretos a cada uma delas.
+//Então criei uma operação if, que verifico se as strings estão ou não vazias. 
+//Caso não estejam, ele continuará com o calculo normal, caso estejam ele ira enviar uma mensagem de inválido.
+	var num1 = document.getElementById("id01").innerHTML;
+	var operador = document.getElementById("id02").innerHTML;
+	var num2 = document.getElementById("id03").innerHTML;
+	if (num1.trim() !== "" && operador.trim() !== "" && num2.trim() !== "") {
+        const element = document.getElementById("id04");
+        element.innerHTML = " = " + eval(num1 + operador + num2);
+    } else {
+        const element = document.getElementById("id04");
+        element.innerHTML = "Calculo inválida";
+	}
+}
+</script>
+
+<button onclick="clicouNumero(1)">1</button>
+<button onclick="clicouNumero(2)">2</button>
+<button onclick="clicouNumero(3)">3</button>
+<br>
+<button onclick="clicouNumero(4)">4</button>
+<button onclick="clicouNumero(5)">5</button>
+<button onclick="clicouNumero(6)">6</button>
+<br>
+<button onclick="clicouNumero(7)">7</button>
+<button onclick="clicouNumero(8)">8</button>
+<button onclick="clicouNumero(9)">9</button>
+<br>
+<button onclick="clicouNumero(0)">0</button>
+<button onclick="clicouOperador('+')">+</button>
+<button onclick="clicouOperador('-')">-</button>
+<button onclick="resultado()">=</button><br>
+<button onclick="location.reload();">C</button>
+<button onclick="window.close();">Fechar</button>
+
+</body>
+</html> 
