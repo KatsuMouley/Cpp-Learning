@@ -8,23 +8,31 @@
     <style>
         .cabecalho {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
         }
 
         a {
+            display: flex;
+            flex-direction: column;
             text-decoration: none;
-            align-items: center;
-            margin: 5px;
-            padding: 10px;
+            margin: 15px;
+            padding: 20px;
             color: rgb(255, 255, 255);
             background-color: rgb(12, 11, 11);
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        a:hover {
+            background-color: #333;
         }
     </style>
 </head>
 
 <body>
+    <a href="../main.html">Main</a>
     <header class="cabecalho">
-        <a href="main.html">Main</a>
         <h1>Cabeçalho</h1>
     </header>
     <p class="paragrafo">

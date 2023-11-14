@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercise 2</title>
+    <title>Exercise 4</title>
     <!-- Design do exercício -->
     <style>
         body {
@@ -12,7 +12,7 @@
             display: grid;
             height: 100vh;
             margin: 0;
-            background-color: rgb(247, 105, 159);
+            background-color: rgb(0, 255, 34);
             place-items: center;
         }
 
@@ -70,6 +70,17 @@
             transition: background-color 0.3s ease;
         }
 
+        #mensagem {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            resize: vertical;
+            min-height: 100px;
+            max-height: 300px;
+        }
+
         button:hover {
             background-color: #333;
         }
@@ -83,13 +94,16 @@
         <form class="formulario">
             <!-- Inputs do formulário vocês podem modificar o max length para o seu gosto-->
             <label for="nome">Nome:</label>
-            <input type="text" id="nome" placeholder="Nome" maxlength="120" required>
+            <input type="text" id="nome" placeholder="Nome" maxlength="60" required>
 
             <label for="email">Email:</label>
-            <input type="email" id="email" placeholder="Email" maxlength="120" required>
+            <input type="email" id="email" placeholder="Email" maxlength="60" required>
 
-            <label for="senha">Senha:</label>
-            <input type="password" id="Senha" placeholder="Senha" maxlength="20" required>
+            <label for="assunto">Assunto:</label>
+            <input type="text" id="assunto" placeholder="Assunto" maxlength="60">
+
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" placeholder="Mensagem" maxlength="255"></textarea>
 
             <button type="submit">Enviar</button>
         </form>

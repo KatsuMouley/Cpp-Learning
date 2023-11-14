@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercise 2</title>
+    <title>Exercise 8</title>
     <!-- Design do exercício -->
     <style>
         body {
@@ -58,6 +58,7 @@
             border: 1px solid #ccc;
             border-radius: 4px;
             box-sizing: border-box;
+            height: 200px;
         }
 
         button {
@@ -81,19 +82,23 @@
 
     <div class="container">
         <form class="formulario">
-            <!-- Inputs do formulário vocês podem modificar o max length para o seu gosto-->
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" placeholder="Nome" maxlength="120" required>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" placeholder="Email" maxlength="120" required>
+            <label for="textarea">digite uma informação:</label>
+            <textarea id="texto" cols="30" rows="10"></textarea>
 
-            <label for="senha">Senha:</label>
-            <input type="password" id="Senha" placeholder="Senha" maxlength="20" required>
-
-            <button type="submit">Enviar</button>
+            <button type="submit" onclick="senha()">Enviar</button>
         </form>
     </div>
+    <script>
+
+        function senha() {
+            let info = document.querySelector('#texto').value;
+
+            if (info === '') {
+                alert("Preencha para efetuar o envio");
+            }
+        }
+    </script>
 </body>
 
 </html>

@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main</title>
     <style>
         a {
             display: flex;
@@ -14,15 +13,28 @@
             padding: 20px;
             color: rgb(255, 255, 255);
             background-color: rgb(12, 11, 11);
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        a:hover {
+            background-color: #333;
         }
     </style>
+    <title>Exercício 6</title>
 </head>
 
 <body>
-    <a href="Ex1.html">Exercício 1</a>
-    <a href="Ex2.html">Exercício 2</a>
-    <a href="Ex3.html">Exercício 3</a>
+    <a href="../main.html">Main</a>
 
+    <button onclick="alerta()">Clique em mim</button>
+
+    <script>
+        function alerta() {
+            alert("Você clicou!");
+        }
+    </script>
 </body>
 
 </html>
