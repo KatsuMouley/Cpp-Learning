@@ -27,6 +27,7 @@
     <button onclick="recomecarJogo()">Recomeçar</button>
 
     <script>
+        //variaveis inciais da página
         const board = document.getElementById('game-board');
         let currentPlayer = 'X';
         let gameBoard = ['', '', '', '', '', '', '', '', ''];
@@ -43,7 +44,7 @@
             document.body.classList.remove('x');
             document.body.classList.add(currentPlayer.toLowerCase());
         }
-
+        //ação de clicar em um dos quadrados
         function handleCellClick(index) {
             if (gameBoard[index] === '' && gameActive) {
                 gameBoard[index] = currentPlayer;
@@ -52,7 +53,7 @@
                 togglePlayer();
             }
         }
-
+        //identifica se o player é O ou X
         function togglePlayer() {
             if (currentPlayer === 'X') {
                 currentPlayer = 'O';
@@ -64,13 +65,13 @@
                 document.body.classList.remove('circle');
             }
         }
-
+        //adiciona o elemento ao quadrado
         function updateBoard() {
             for (let i = 0; i < gameBoard.length; i++) {
                 board.children[i].innerText = gameBoard[i];
             }
         }
-
+        //verifica se há um ganhador ou se empatou
         function checkWinner() {
             const winningCombos = [
                 [0, 1, 2], [3, 4, 5], [6, 7, 8], // rows

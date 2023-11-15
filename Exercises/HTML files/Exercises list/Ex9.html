@@ -21,17 +21,17 @@
             <button onclick="raiz()">√</button>
             <button onclick="clearDisplay()">C</button>
             <button onclick="add('+')">+</button>
-            <button onclick="add('1')">1</button>
-            <button onclick="add('2')">2</button>
-            <button onclick="add('3')">3</button>
+            <button onclick="add('7')">7</button>
+            <button onclick="add('8')">8</button>
+            <button onclick="add('9')">9</button>
             <button onclick="add('-')">-</button>
             <button onclick="add('4')">4</button>
             <button onclick="add('5')">5</button>
             <button onclick="add('6')">6</button>
             <button onclick="add('/')">/</button>
-            <button onclick="add('7')">7</button>
-            <button onclick="add('8')">8</button>
-            <button onclick="add('9')">9</button>
+            <button onclick="add('1')">1</button>
+            <button onclick="add('2')">2</button>
+            <button onclick="add('3')">3</button>
             <button onclick="add('*')">*</button>
             <button onclick="add('.')">.</button>
             <button onclick="add('0')">0</button>
@@ -41,15 +41,15 @@
 
     <script>
         let display = document.getElementById('display');
-
+        //adiciona os elementos a um Array
         function add(value) {
             display.value += value;
         }
-
+        //limpa o Array
         function clearDisplay() {
             display.value = '';
         }
-
+        //calcula o Array
         function calcular() {
             try {
                 display.value = eval(display.value);
@@ -57,9 +57,9 @@
                 display.value = 'Error';
             }
         }
-
+        //
         function fatorial() {
-            const num = parseInt(display.value);
+            const num = parseInt(eval(display.value));
             if (!isNaN(num)) {
                 let result = 1;
                 for (let i = 1; i <= num; i++) {
