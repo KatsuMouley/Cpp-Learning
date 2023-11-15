@@ -6,85 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercise 4</title>
     <!-- Design do exercício -->
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: grid;
-            height: 100vh;
-            margin: 0;
-            background-color: rgb(0, 255, 34);
-            place-items: center;
-        }
-
-        a {
-            display: flex;
-            flex-direction: column;
-            text-decoration: none;
-            margin: 15px;
-            padding: 20px;
-            color: white;
-            background-color: black;
-            border-radius: 8px;
-            transition: background-color 0.3s ease;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-        }
-
-        a:hover {
-            background-color: rgb(32, 32, 32);
-        }
-
-        .container {
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            max-width: 400px;
-            width: 100%;
-        }
-
-        .formulario {
-            display: flex;
-            flex-direction: column;
-        }
-
-        label {
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
-
-        input {
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-
-        button {
-            background-color: rgb(12, 11, 11);
-            color: #fff;
-            padding: 12px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        #mensagem {
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-            resize: vertical;
-            min-height: 100px;
-            max-height: 300px;
-        }
-
-        button:hover {
-            background-color: #333;
-        }
-    </style>
+    <link rel="stylesheet" href="forms.css">
+    <link rel="stylesheet" href="linkButton.css">
 </head>
 
 <body>
@@ -92,7 +15,7 @@
 
     <div class="container">
         <form class="formulario">
-            <!-- Inputs do formulário vocês podem modificar o max length para o seu gosto-->
+
             <label for="nome">Nome:</label>
             <input type="text" id="nome" placeholder="Nome" maxlength="60" required>
 

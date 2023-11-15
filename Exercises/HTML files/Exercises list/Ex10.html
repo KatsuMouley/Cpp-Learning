@@ -4,53 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-        }
-
-        a {
-            display: flex;
-            flex-direction: column;
-            text-decoration: none;
-            margin: 15px;
-            padding: 20px;
-            color: white;
-            background-color: black;
-            border-radius: 8px;
-            transition: background-color 0.3s ease;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-        }
-
-        a:hover {
-            background-color: rgb(32, 32, 32);
-        }
-
-        .game-board {
-            display: grid;
-            grid-template-columns: repeat(3, 100px);
-            grid-gap: 5px;
-        }
-
-        .cell {
-            width: 100px;
-            height: 100px;
-            border: 1px solid #000;
-            font-size: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-        }
-    </style>
-    <title>Jogo da Velha</title>
+    <link rel="stylesheet" href="tictactoe.css">
+    <link rel="stylesheet" href="linkButton.css">
+    <title>Exercício 10</title>
 </head>
 
-<body>
+<body class="x">
 
     <a href="../main.html">Main</a>
 
@@ -65,12 +24,25 @@
         <div class="cell" onclick="handleCellClick(7)"></div>
         <div class="cell" onclick="handleCellClick(8)"></div>
     </div>
+    <button onclick="recomecarJogo()">Recomeçar</button>
 
     <script>
         const board = document.getElementById('game-board');
         let currentPlayer = 'X';
         let gameBoard = ['', '', '', '', '', '', '', '', ''];
         let gameActive = true;
+
+        function recomecarJogo() {
+            currentPlayer = 'X';
+            gameBoard = ['', '', '', '', '', '', '', '', ''];
+            gameActive = true;
+            for (let i = 0; i < gameBoard.length; i++) {
+                board.children[i].innerText = '';
+            }
+            document.body.classList.remove('circle');
+            document.body.classList.remove('x');
+            document.body.classList.add(currentPlayer.toLowerCase());
+        }
 
         function handleCellClick(index) {
             if (gameBoard[index] === '' && gameActive) {
@@ -82,7 +54,15 @@
         }
 
         function togglePlayer() {
-            currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+            if (currentPlayer === 'X') {
+                currentPlayer = 'O';
+                document.body.classList.add('circle');
+                document.body.classList.remove('x');
+            } else {
+                currentPlayer = 'X';
+                document.body.classList.add('x');
+                document.body.classList.remove('circle');
+            }
         }
 
         function updateBoard() {

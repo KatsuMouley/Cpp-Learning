@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Mario</title>
+</head>
+
+<body
+  style='background-image: url("https://st3.depositphotos.com/4189501/32509/v/450/depositphotos_325097206-stock-illustration-old-retro-video-game-background.jpg"); background-repeat: no-repeat; background-attachment: fixed;'>
+  <button onclick="salto()"> >Clique aqui para pular< </button>
+      <img id="mario"
+        src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/dee38e10-db68-462d-9df7-46b87d4c7876/ddxh2po-85a87439-ac1f-49d7-a828-6b78d768b403.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2RlZTM4ZTEwLWRiNjgtNDYyZC05ZGY3LTQ2Yjg3ZDRjNzg3NlwvZGR4aDJwby04NWE4NzQzOS1hYzFmLTQ5ZDctYTgyOC02Yjc4ZDc2OGI0MDMuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.TGsrcvN8-1L5EmrOSnRRtcffJfUkkdFtLzztr_mjy5Q" />
+
+
+      <script>
+        var posicao = 1;
+        var posicaoV = 260;
+        var subindo = 0; // 0 = ascendente, 1=caindo
+        var direcao = 0; // 0 == indo, 1 == voltando
+        var marioObject = document.getElementById("mario");
+
+        function inicializa() {
+          marioObject.style.position = 'absolute';
+          marioObject.style.top = posicaoV + 'px';
+          marioObject.style.width = "80px"
+          marioObject.style.height = "80px"
+        }
+
+        function salto() {
+          marioObject.style.top = posicaoV + 'px'
+          if (subindo == 1) //Se mario esta caindo
+            posicaoV = posicaoV + 1;
+          else
+            posicaoV = posicaoV - 1;
+          if (posicaoV == 200)
+            subindo = 1;
+          if (posicaoV < 261) {//Se mario nao esta no chao
+            setTimeout(salto, 1);
+            marioObject.src = 'mario_jumping.png';
+            //Enquanto o mario não estiver no chão imagem = pulando
+          } else {
+            subindo = 0;
+            posicaoV = 260;
+            marioObject.src = 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/dee38e10-db68-462d-9df7-46b87d4c7876/ddxh2po-85a87439-ac1f-49d7-a828-6b78d768b403.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2RlZTM4ZTEwLWRiNjgtNDYyZC05ZGY3LTQ2Yjg3ZDRjNzg3NlwvZGR4aDJwby04NWE4NzQzOS1hYzFmLTQ5ZDctYTgyOC02Yjc4ZDc2OGI0MDMuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.TGsrcvN8-1L5EmrOSnRRtcffJfUkkdFtLzztr_mjy5Q';
+            //Enquanto o mario estiver no chão imagem = andando
+          }
+        }
+        function correLado() {
+          marioObject.style.left = posicao + 'px'
+          if (direcao == 1) {
+            marioObject.style.transform = "scaleX(-1)";
+            posicao = posicao - 1;
+          } else {
+            marioObject.style.transform = "";
+            posicao = posicao + 1;
+          }
+          if (posicao == 500)
+            direcao = 1;
+          if (posicao == 0)
+            direcao = 0
+          setTimeout(correLado, 2);
+        }
+        inicializa();
+        correLado();
+
+      </script>
+</body>
+
+</html>
