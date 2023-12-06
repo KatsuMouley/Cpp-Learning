@@ -8,7 +8,7 @@ int main(void)
     {
         std::cout << "I'm a if statement" << std::endl;
     }
-    std::cout << "oi\n";
-    std::cout << "mudao do C++!";
+    std::cout << "Hi!\n";
+    std::cout << "World of C++!";
     return 0;
 }
