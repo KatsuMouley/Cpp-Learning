@@ -3,8 +3,11 @@
 int main()
 {
     const double PI = 3.14;
-    int raio, distance;
-    std::cout << "Please input the ray of the circuference" << std::endl;
-
+    double circuference;
+    int radius;
+    std::cout << "Please input the radius of the circuference" << std::endl;
+    std::cin >> radius;
+    circuference = radius * (PI * 2);
+    std::cout << "So the circuference is " << circuference << std::endl;
     return 0;
 }
