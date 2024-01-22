@@ -33,3 +33,8 @@ void NameSpaSecond()
     cout << x << endl;
     cout << name << endl;
 }
+
+/*
+Namespace = provides a solution for preveting name conflicts in large projects. Each entity needs an unique name.
+A namespace allows for identically named entities as long as the namespaces are different.
+*/
