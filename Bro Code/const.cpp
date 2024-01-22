@@ -7,7 +7,7 @@ int main()
     int radius;
     std::cout << "Please input the radius of the circuference" << std::endl;
     std::cin >> radius;
-    circuference = radius * (PI * 2);
+    circuference = radius * PI * 2;
     std::cout << "So the circuference is " << circuference << std::endl;
     return 0;
 }
