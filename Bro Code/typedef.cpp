@@ -20,5 +20,6 @@ int main()
 }
 
 /*
-    typedef = reserved key word used to create an aditional name (alias) for another data type;
+    Typedef = reserved key word used to create an aditional name (alias) for another data type.
+    New identifier for an existing type helps with readability and reduces typos.
 */
