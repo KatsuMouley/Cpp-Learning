@@ -28,7 +28,7 @@ int main()
     }
     else
     {
-        std::cout << "Please enter only C or F";
+        std::cout << "Please enter only C or F\n";
     }
     std::cout << "*************************************************\n";
     return 0;
