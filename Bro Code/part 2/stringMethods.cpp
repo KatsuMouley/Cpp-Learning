@@ -52,8 +52,8 @@ void appendMethod(std::string name)
 {
     std::cout << "****************************************" << std::endl;
     std::cout << "**Append Method**" << std::endl;
-    // int findLocation = name.find(' '); // This method give the position of the first character that we gave it to find it;
-    // name.erase(findLocation);
+    int findLocation = name.find(' '); // This method give the position of the first character that we gave it to find it;
+    name.erase(findLocation);
     //  Nesta linha de código, basicamente estou pedindo para o código apagar todo o nome a partir da primeira linha de espaço
     //  também poderiamos utilizar name.erase(findLocation, name.length()), porém o que foi utilizado é mais simples
     name.append("@LexLuthor.com");
