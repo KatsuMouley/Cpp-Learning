@@ -15,9 +15,9 @@ int main()
         std::cin >> y;
     }
 
-    for (int i = 0; i <= r; i++)
+    for (int i = 1; i <= r; i++)
     {
-        for (int j = 0; j <= c; j++)
+        for (int j = 1; j <= c; j++)
         {
             if (i == x && j == y)
             {
