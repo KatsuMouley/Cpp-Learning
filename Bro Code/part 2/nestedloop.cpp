@@ -2,11 +2,11 @@
 int main()
 {
     int x, y, c, r;
-    std::cout << "Lets find a position!" << std::endl;
     std::cout << "Insert the number of columns: ";
     std::cin >> c;
     std::cout << "Insert the number of rows: ";
     std::cin >> r;
+    std::cout << "Lets find a position!" << std::endl;
     while ((x < 0 || y < 0) || (x > c || y > r))
     {
         std::cout << "Insert the x coordinates: ";
