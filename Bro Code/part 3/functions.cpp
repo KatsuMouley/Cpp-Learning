@@ -7,7 +7,7 @@ int main()
     std::string name;
 
     std::cout << "Insert your name: ";
-    std::cin << name;
+    std::cin >> name;
     function(name);
 
     // An function capable of finding the points of collision between two objects
