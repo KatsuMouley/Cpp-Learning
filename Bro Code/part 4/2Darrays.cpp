@@ -1,6 +1,7 @@
 #include <iostream>
 
 int main(){
+    // int value[columns][rows];
     std::string cars[][3] = {{"Mustang", "Escape", "F-150"},
                             {"Mqueen", "fastFUrious", "Skbidi"},
                             {"john", "Skoyyyy", "fraaaaisk"}};
