@@ -3,6 +3,7 @@
 #include <chrono>
 
 void run();
+void test();
 void print(char mensagem[], int seconds);
 void yesOrNo(char mensagem1[], char mensagem2[], char mensagem3[], int seconds);
 void sleep_millis(unsigned int ms)
@@ -28,7 +29,6 @@ void run(){
     std::cout << std::endl;
 }
 
-
 void print(char mensagem[], int seconds){
     for (int i = 0; mensagem[i] != '\0'; ++i)
     {
@@ -36,6 +36,7 @@ void print(char mensagem[], int seconds){
         sleep_millis(seconds);
     }
 }
+
 void yesOrNo(char mensagem1[], char mensagem2[], char mensagemDefault[], int seconds){
     char value;
     std::cout << "\n[y] [n]\n";
@@ -60,5 +61,18 @@ void yesOrNo(char mensagem1[], char mensagem2[], char mensagemDefault[], int sec
         print(mensagemDefault, seconds);
         break;
     } 
+}
 
+void test(){
+    std::string s = "string";
+    for(char c : s){  
+        //do stuff
+    }  
+    // You can also iterate through a string using a for loop:
+
+    std::string s = "string";  
+    for(int i = 0; i < s.length(); i++){  
+    char c = s[i];
+    //do stuff. 
+    }
 }
